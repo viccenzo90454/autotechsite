@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import MenuDrawer from '../components/MenuDrawer';
 
 export default function Sobre() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       
@@ -22,9 +25,13 @@ export default function Sobre() {
           </ul>
         </nav>
 
-        <Link to="/login" className="btn-login">
+        <button 
+          onClick={() => setIsMenuOpen(true)} 
+          className="btn-login" 
+          style={{ cursor: 'pointer', border: 'none' }}
+        >
           MENU
-        </Link>
+        </button>
       </header>
 
       {/* 2. Secção 1: Nossa Identidade */}
@@ -110,6 +117,9 @@ export default function Sobre() {
       <footer className="footer">
         AUTOTECH
       </footer>
+
+      {/* 6. Gaveta de Menu Lateral */}
+      <MenuDrawer isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
 
     </div>
   );

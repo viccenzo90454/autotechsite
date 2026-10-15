@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import MenuDrawer from '../components/MenuDrawer';
 
 export default function Orcamento() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     nome: '',
     empresa: '',
@@ -24,7 +26,7 @@ export default function Orcamento() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       
-      {/* 1. Navbar */}
+
       <header className="navbar">
         <Link to="/" className="logo">
           Auto<span>Tech</span>
@@ -41,12 +43,16 @@ export default function Orcamento() {
           </ul>
         </nav>
 
-        <Link to="/login" className="btn-login">
+        <button 
+          onClick={() => setIsMenuOpen(true)} 
+          className="btn-login" 
+          style={{ cursor: 'pointer', border: 'none' }}
+        >
           MENU
-        </Link>
+        </button>
       </header>
 
-      {/* 2. Conteúdo do Formulário */}
+     
       <div className="budget-container">
         
         <div className="budget-header-box">
@@ -151,10 +157,13 @@ export default function Orcamento() {
 
       </div>
 
-      {/* 3. Rodapé */}
+      
       <footer className="footer">
         AUTOTECH
       </footer>
+
+  
+      <MenuDrawer isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
 
     </div>
   );

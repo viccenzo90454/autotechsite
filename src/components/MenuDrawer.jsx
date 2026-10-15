@@ -24,11 +24,6 @@ export default function MenuDrawer({ isOpen, onClose }) {
           <Link to="/login" onClick={onClose} className="drawer-link login-highlight">Aceder / Login</Link>
         </nav>
 
-        <div className="drawer-footer">
-          <p>Suporte Industrial 24/7</p>
-          <span>suporte@autotech.com.br</span>
-        </div>
-
       </div>
     </div>
   );

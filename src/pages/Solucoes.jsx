@@ -75,7 +75,7 @@ export default function Solucoes() {
           <Link to="/orcamento" className="btn-solution-action">EXPLORAR DASHBOARDS</Link>
         </div>
 
-        {/* Card 4 */}
+      
         <div className="solution-card-item">
           <div className="solution-card-top">
             <div className="solution-card-icon">⚡</div>
